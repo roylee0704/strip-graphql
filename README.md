@@ -1,2 +1,7 @@
 # strip-graphql
-bare-bone version of graphQL running in ExpressJS framework
+bare-bone graphQL in NodeJS.
+
+
+```bash
+$    node index.js
+```
