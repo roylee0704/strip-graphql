@@ -6,23 +6,32 @@ var schema = buildSchema(`
     hello: String
     human: Human
     homans: Human
+    shit: Human
   }
 
   type Human {
-      name: String
+      id: ID!
+      name: String!
   }
 `);
 
-// The root provides a resolver function for each API endpoint
+// The root provides a resolver function for each API endpoint.
+// it is named as root because it's the entry point.
+const humanList = [
+    { name: 'Roy', },
+    { name: 'Earng' },
+];
+
+// mapped to each field in QueryType
 var root = {
     hello: () => {
         return 'Hello world!';
     },
     human: () => {
-        return { name: 'Roy' };
+        return humanList[1];
     },
     homans: () => {
-        return { name: 'Roy' };
+        return humanList[0];
     },
 };
 
